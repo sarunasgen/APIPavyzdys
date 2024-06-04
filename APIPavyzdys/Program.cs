@@ -8,10 +8,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddSingleton<IAnimalService, AnimalService>();
 IDatabaseActionsService databaseActionsService = new DatabaseActionsService("");
-builder.Services.AddSingleton<IServiceThatUsesDatabaseActions, ServiceThatUsesDatabaseActions>(_ 
-    => new ServiceThatUsesDatabaseActions(databaseActionsService));
+builder.Services.AddSingleton<IServiceThatUsesDatabaseActions, ServiceThatUsesDatabaseActions>(_ => new ServiceThatUsesDatabaseActions(databaseActionsService));
 
 
 var app = builder.Build();

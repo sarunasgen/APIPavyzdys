@@ -10,5 +10,10 @@
         {
             return new Animal { Name = "Lucky" };
         }
+
+        public void InsertAnimal(Animal animal)
+        {
+            animal = animal;
+        }
     }
 }

@@ -8,13 +8,21 @@ namespace APIPavyzdys.Controllers
     [Route("[controller]")]
     public class DatabaseActionsController : ControllerBase
     {
-        IServiceThatUsesDatabaseActions _service;
+        private readonly IServiceThatUsesDatabaseActions _service;
         public DatabaseActionsController(IServiceThatUsesDatabaseActions service)
         {
             _service = service;
         }
         [HttpGet]
         public List<Animal> Index(int id, int klientoId)
+        {
+            List<Animal> animals = new List<Animal>();
+            animals.Add(_service.GetAnimalById(id));
+            animals.Add(_service.GetAnimalById(klientoId));
+            return animals;
+        }
+        [HttpGet("Endpoint Pavadinimas")]
+        public List<Animal> Index2(int id, int klientoId)
         {
             List<Animal> animals = new List<Animal>();
             animals.Add(_service.GetAnimalById(id));

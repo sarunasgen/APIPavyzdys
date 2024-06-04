@@ -12,10 +12,16 @@ namespace APIPavyzdys.Controllers
         {
             _animalService= animalService;
         }
-        [HttpGet(Name = "GetAnimal")]
+        [HttpGet("GetAnimal")]
         public Animal Index()
         {
             return _animalService.GetAnimal();
         }
+        [HttpPost("InsertAnimal")]
+        public void InsertAnimal(Animal animal)
+        {
+            _animalService.InsertAnimal(animal);
+        }
+        
     }
 }
