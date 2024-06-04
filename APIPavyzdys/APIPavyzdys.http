@@ -1,0 +1,6 @@
+@APIPavyzdys_HostAddress = http://localhost:5001
+
+GET {{APIPavyzdys_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
