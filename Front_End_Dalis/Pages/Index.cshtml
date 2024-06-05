@@ -1,11 +1,19 @@
 ﻿@page
+@using APIPavyzdys
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Sveiki Atvyke Į mano pirmąją ASP.NET aplikacija su Front End</h1>
+    <a style="color: inherit;
+ text-decoration: none;
+ border: 1px solid black;
+ padding: 10px 20px;
+ display: inline-block;
+ font-family: sans-serif;" href="/GyvunuSarasas">Eiti į Gyvunu sarasa</a>
+
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <div>
         <p>Mano vartotojo id yra @Model.VartotojoId</p>
@@ -13,7 +21,12 @@
         {
             <p>Spausdinu p elementa jau @(i+4) karta</p>
         }
-        
+        <h3>Mano gyvunu sarasas is API</h3>
+        @foreach(Animal animal in Model.Animals)
+        {
+            <p>@animal.Name   @animal.Age</p>
+        }
+
     </div>
     
 </div>

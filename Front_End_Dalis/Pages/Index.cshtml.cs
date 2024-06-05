@@ -1,3 +1,4 @@
+using APIPavyzdys;
 using Front_End_Dalis.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,6 +10,9 @@ namespace Front_End_Dalis.Pages
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public int VartotojoId { get; set; }
+
+        [BindProperty]
+        public List<Animal> Animals { get; set; } = new List<Animal>();
 
         INuomaAPIService _apiService;
 
@@ -22,7 +26,7 @@ namespace Front_End_Dalis.Pages
         {
             Random random = new Random();
             VartotojoId = random.Next(1, 100000);
-            _apiService.GetAllAnimals();
+            Animals = _apiService.GetAllAnimals();
         }
     }
 }

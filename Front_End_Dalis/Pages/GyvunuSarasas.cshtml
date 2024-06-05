@@ -1,0 +1,14 @@
+﻿@page
+@using APIPavyzdys;
+@model Front_End_Dalis.Pages.GyvunuSarasasModel
+@{
+
+}
+<div class="text-center">
+    <h2>Cia rodomas mano gyvunu sarasas</h2>
+    @foreach(Animal animal in Model.Animals)
+    {
+        <p style="color:red; font-size: 8px;">@animal.Name     @animal.Age</p>
+    }
+</div>
+
