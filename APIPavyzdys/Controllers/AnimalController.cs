@@ -26,8 +26,8 @@ namespace APIPavyzdys.Controllers
             animals.Add(new Animal { Name = "Rocky", Age =7 });
             return animals;
         }
-        [HttpGet("InsertAnimal")]
-        public void InsertAnimal(Animal animal)
+        [HttpPost("InsertAnimal")]
+        public void InsertAnimal([FromForm]Animal animal)
         {
             _animalService.InsertAnimal(animal);
         }

@@ -26,7 +26,17 @@
         {
             <p>@animal.Name   @animal.Age</p>
         }
-
+        <h2>Gyvuno sukurimas</h2>
+        <form method="post" action="https://localhost:7217/api/Animal/InsertAnimal">
+            <label for="Name">Gyvuno vardas</label>
+            <input type="text" id="Name" name="Name" />
+            <br />
+            <label for="age">Gyvuno Amzius</label>
+            <input type="number" id="Age" name="age" />
+            <br />
+            <br />
+            <button type="submit">Sukurti Gyvuna</button>
+        </form>
     </div>
     
 </div>

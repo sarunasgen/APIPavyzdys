@@ -7,11 +7,16 @@ namespace Front_End_Dalis.Services
     {
         private readonly string _apiBase;
         private readonly HttpClient _httpClient;
+        private JsonSerializerOptions jsonSerializerOptions;
         public NuomaAPIService(string apibase) 
         { 
             _apiBase = apibase;
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(_apiBase);
+            jsonSerializerOptions = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = false
+            };
         }
         public List<Animal> GetAllAnimals()
         {
@@ -20,7 +25,7 @@ namespace Front_End_Dalis.Services
             if (response.IsSuccessStatusCode)
             {
                 string jsonResponse = response.Content.ReadAsStringAsync().Result;
-                return JsonSerializer.Deserialize<List<Animal>>(jsonResponse);
+                return JsonSerializer.Deserialize<List<Animal>>(jsonResponse, jsonSerializerOptions);
             }
             return new List<Animal>();
         }
