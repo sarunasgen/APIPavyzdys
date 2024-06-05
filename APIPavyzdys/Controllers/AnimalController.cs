@@ -17,7 +17,7 @@ namespace APIPavyzdys.Controllers
         {
             return _animalService.GetAnimal();
         }
-        [HttpPost("InsertAnimal")]
+        [HttpGet("InsertAnimal")]
         public void InsertAnimal(Animal animal)
         {
             _animalService.InsertAnimal(animal);

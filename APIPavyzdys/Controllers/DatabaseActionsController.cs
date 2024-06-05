@@ -21,7 +21,7 @@ namespace APIPavyzdys.Controllers
             animals.Add(_service.GetAnimalById(klientoId));
             return animals;
         }
-        [HttpGet("Endpoint Pavadinimas")]
+        [HttpPost("CreateAnimal")]
         public List<Animal> Index2(int id, int klientoId)
         {
             List<Animal> animals = new List<Animal>();
